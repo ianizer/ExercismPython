@@ -41,11 +41,10 @@ def remove_suffix_ness(word: str) -> str:
     For example: "heaviness" becomes "heavy", but "sadness" becomes "sad".
     """
 
-    # Must convert 'i' to 'y' if directly prior to the 'ness'.
-    word = word.rstrip("ness")
+    word = word.removesuffix("ness")
 
+    # Must convert 'i' to 'y' if directly prior to the 'ness'.
     if word.endswith("i"):
-        # .removesuffix() is chosen but .rstrip() would work too. 
         word = word.removesuffix("i") + "y"
 
     return word
